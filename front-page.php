@@ -52,7 +52,7 @@ while ( $query1->have_posts() ) {
     echo '<div class="conference">';
     the_post_thumbnail("thumbnail");
         echo '<div class="conferenceTexte">';
-            echo '<h3>' . get_the_title() .' '. get_the_date('Y-m-d'). '</h3>';
+            echo '<a href=' . get_the_permalink() . '<h3>' . get_the_title() . '</a> ' . get_the_date('Y-m-d') . '</h3>';
             echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
             echo '</div>';
     echo '</div>';
