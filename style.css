@@ -1,4 +1,10 @@
 /*
+*_ELEMENT.SCSS
+*_CONFERENCE.SCSS
+*_NOUVELLES.SCSS
+*_EVENEMENT.SCSS
+*/
+/*
  Theme Name:   Underscores Enfant
  Theme URI:    http://example.com/underscores/
  Description:  Twenty Fifteen Child Theme
@@ -41,5 +47,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.grilleEvenement {
+  display: -ms-grid;
+  display: grid;
+  border: 2px solid black;
 }
 /*# sourceMappingURL=style.css.map */

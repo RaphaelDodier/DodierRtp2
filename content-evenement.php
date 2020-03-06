@@ -39,13 +39,21 @@ $args3=array(
 //  The 3rd Query (without global var) 
 $query3 = new WP_Query( $args3 );
  
+echo "<div class = 'grilleEvenement'>";
+
 // The 3rd Loop
 while ( $query3->have_posts() ) {
     $query3->the_post();
-    echo '<h3><a href='. get_the_permalink() .'>'. get_the_title($query3->post->ID) .'</a> - '. get_the_date('Y-m-d') .'</h3>';
+    $jour = get_the_date('j');
+    $mois = (int)get_the_date('m');
+    $gridArea = $jour . '/' . ($mois%3+1) . '/' . ($jour+1) . '/' . (($mois%3+1)+1);
+
+    echo '<h3 style ="border:black 1px solid;grid-area:'. $gridArea.'"><a href='. get_the_permalink() .'>'. get_the_title($query3->post->ID) .'</a> - '. get_the_date('Y-m-d') .' - Grid-area'.$gridArea.'</h3>';
 
 }
  
+echo "</div>";
+
 // Restore original Post Data
 wp_reset_postdata();
  
