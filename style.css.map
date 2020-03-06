@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "ACAA;;;;;;;;;;;;EAYE;AAEF,AAAA,IAAI,CAAA;EACA,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,MAAM;CACjB;;ACjBD,AAAA,WAAW,CAAA;EAEP,OAAO,EAAE,IAAI;EACb,MAAM,EAAE,MAAM;CACjB",
+    "sources": [
+        "sass/style.scss",
+        "sass/_element.scss",
+        "sass/_conference.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

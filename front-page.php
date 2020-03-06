@@ -49,9 +49,13 @@ $query1 = new WP_Query( $args );
 // The Loop
 while ( $query1->have_posts() ) {
     $query1->the_post();
+    echo '<div class="conference">';
     the_post_thumbnail("thumbnail");
-    echo '<h3>' . get_the_title() .' '. get_the_date('Y-m-d'). '</h3>';
-    echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+        echo '<div class="conferenceTexte">';
+            echo '<h3>' . get_the_title() .' '. get_the_date('Y-m-d'). '</h3>';
+            echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+            echo '</div>';
+    echo '</div>';
 };
  
 /* Restore original Post Data 
