@@ -80,12 +80,13 @@ $args2 = array(
 $query2 = new WP_Query( $args2 );
  
 // The Loop
+echo '<div class="nouvelles">';
 while ( $query2->have_posts() ) {
     $query2->the_post();
-    the_post_thumbnail("thumbnail");
     echo '<h3>' . get_the_title() .'</h3>';
-    echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+    the_post_thumbnail("thumbnail");
 };
+echo '</div>';
  
 /* Restore original Post Data 
  * NB: Because we are using new WP_Query we aren't stomping on the 
