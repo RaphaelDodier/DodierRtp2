@@ -33,12 +33,13 @@ get_header();
 		endwhile; // End of the loop.
         
         
+
+/////////////////////////////////////////////// CONFÉRENCE ///////////////////////////////////////////////////
+echo '<h2>'.category_description( get_category_by_slug( 'conference')).'</h2>';
  
-/////////////////////////////////////////////// NOUVELLE ///////////////////////////////////////////////////
-echo '<h2>'.category_description( get_category_by_slug( 'nouvelle')).'</h2>';
 // The Query
 $args = array(
-    "category_name" =>"nouvelle",
+    "category_name" =>"conference",
     "posts_per_page"=> 3,
     // "orderby" => "date",
     // "order" => "ASC"
@@ -48,7 +49,8 @@ $query1 = new WP_Query( $args );
 // The Loop
 while ( $query1->have_posts() ) {
     $query1->the_post();
-    echo '<h2>' . get_the_title() . '</h2>';
+    the_post_thumbnail("thumbnail");
+    echo '<h3>' . get_the_title() .' '. get_the_date('Y-m-d'). '</h3>';
     echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
 };
  
@@ -62,8 +64,37 @@ wp_reset_postdata();
 
 
 /////////////////////////////////////////////// NOUVELLE ///////////////////////////////////////////////////
+echo '<h2>'.category_description( get_category_by_slug( 'nouvelle')).'</h2>';
+ 
+// The Query
+$args2 = array(
+    "category_name" =>"nouvelle",
+    "posts_per_page"=> 4,
+    // "orderby" => "date",
+    // "order" => "ASC"
+);
+$query2 = new WP_Query( $args2 );
+ 
+// The Loop
+while ( $query2->have_posts() ) {
+    $query2->the_post();
+    the_post_thumbnail("thumbnail");
+    echo '<h3>' . get_the_title() .'</h3>';
+    echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+};
+ 
+/* Restore original Post Data 
+ * NB: Because we are using new WP_Query we aren't stomping on the 
+ * original $wp_query and it does not need to be reset with 
+ * wp_reset_query(). We just need to set the post data back up with
+ * wp_reset_postdata().
+ */
+wp_reset_postdata();
 
-$args2=array(
+
+/////////////////////////////////////////////// EVENEMENT ///////////////////////////////////////////////////
+
+$args3=array(
     "category_name" =>"evenement",
     "posts_per_page"=> 10
 );
@@ -71,13 +102,12 @@ $args2=array(
  
  
 //  The 2nd Query (without global var) 
-$query2 = new WP_Query( $args2 );
+$query3 = new WP_Query( $args3 );
  
 // The 2nd Loop
-while ( $query2->have_posts() ) {
-    $query2->the_post();
-    the_post_thumbnail("thumbnail");
-    echo '<h2>' . get_the_title( $query2->post->ID ) . '</h2>';
+while ( $query3->have_posts() ) {
+    $query3->the_post();
+    echo '<h2>' . get_the_title( $query3->post->ID ) . '</h2>';
     echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
 
 }
