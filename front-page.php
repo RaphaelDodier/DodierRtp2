@@ -83,8 +83,10 @@ $query2 = new WP_Query( $args2 );
 echo '<div class="nouvelles">';
 while ( $query2->have_posts() ) {
     $query2->the_post();
+    echo '<div class="uneNouvelles">';
     echo '<h3>' . get_the_title() .'</h3>';
     the_post_thumbnail("thumbnail");
+    echo '</div>';
 };
 echo '</div>';
  
