@@ -25,19 +25,24 @@ get_header();
 
 $args3=array(
     "category_name" =>"evenement",
-    "posts_per_page"=> 10
+    'date_query' => array(
+        array(
+            'after' => '2019-09-01',
+            'before' => '2019-11-30',
+            'inclusive' => true,
+        ),
+    ),
 );
 
  
  
-//  The 2nd Query (without global var) 
+//  The 3rd Query (without global var) 
 $query3 = new WP_Query( $args3 );
  
-// The 2nd Loop
+// The 3rd Loop
 while ( $query3->have_posts() ) {
     $query3->the_post();
-    echo '<h2>' . get_the_title( $query3->post->ID ) . '</h2>';
-    echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+    echo '<h3><a href='. get_the_permalink() .'>'. get_the_title($query3->post->ID) .'</a> - '. get_the_date('Y-m-d') .'</h3>';
 
 }
  

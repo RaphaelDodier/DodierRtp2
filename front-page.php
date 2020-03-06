@@ -52,7 +52,7 @@ while ( $query1->have_posts() ) {
     echo '<div class="conference">';
     the_post_thumbnail("thumbnail");
         echo '<div class="conferenceTexte">';
-            echo '<a href=' . get_the_permalink() . '<h3>' . get_the_title() . '</a> ' . get_the_date('Y-m-d') . '</h3>';
+            echo '<h3><a href='. get_the_permalink() .'>'. get_the_title() . '</a> ' . get_the_date('Y-m-d') . '</h3>';
             echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
             echo '</div>';
     echo '</div>';
@@ -84,7 +84,8 @@ echo '<div class="nouvelles">';
 while ( $query2->have_posts() ) {
     $query2->the_post();
     echo '<div class="uneNouvelles">';
-    echo '<h3>' . get_the_title() .'</h3>';
+    echo '<h3><a href='. get_the_permalink() .'>'. get_the_title() .'</a></h3>';
+    // echo '<h3><a href='. get_the_permalink() .'>'. get_the_title() . '</a> ' . get_the_date('Y-m-d') . '</h3>';
     the_post_thumbnail("thumbnail");
     echo '</div>';
 };
@@ -98,29 +99,6 @@ echo '</div>';
  */
 wp_reset_postdata();
 
-
-/////////////////////////////////////////////// EVENEMENT ///////////////////////////////////////////////////
-
-$args3=array(
-    "category_name" =>"evenement",
-    "posts_per_page"=> 10
-);
-
- 
- 
-//  The 2nd Query (without global var) 
-$query3 = new WP_Query( $args3 );
- 
-// The 2nd Loop
-while ( $query3->have_posts() ) {
-    $query3->the_post();
-    echo '<h2>' . get_the_title( $query3->post->ID ) . '</h2>';
-    echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
-
-}
- 
-// Restore original Post Data
-wp_reset_postdata();
  
 ?>
 
