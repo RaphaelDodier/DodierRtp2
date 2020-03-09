@@ -22,6 +22,14 @@
   margin: 0 auto;
 }
 
+.site-description {
+  display: none;
+}
+
+nav .menu-menu-1-container #primary-menu li {
+  margin: 0 20px;
+}
+
 .conference {
   display: -webkit-box;
   display: -ms-flexbox;
