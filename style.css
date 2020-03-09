@@ -60,6 +60,13 @@ nav .menu-menu-1-container #primary-menu li {
 .grilleEvenement {
   display: -ms-grid;
   display: grid;
-  border: 2px solid black;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[11];
+      grid-template-rows: repeat(11, 1fr);
+}
+
+.unAtelier {
+  border: 1px solid black;
 }
 /*# sourceMappingURL=style.css.map */

@@ -34,13 +34,54 @@ $queryAtelier = new WP_Query($argsAtelier);
 
 $i = 0;
 
+echo "<div class = 'grilleEvenement'>";
+
 // LA BOUCLE
 while ( $queryAtelier->have_posts() ) {
-    $queryAtelier->the_post();
-    $i = $i+1;
-    echo '<p>'.$i.'. '. get_the_title() .'______<span style="color:red;">'.	get_post_field('post_name').'</span><span style="color:blue;">______'.get_the_author_meta( "display_name", $post->post_author )  .'</span></p>';
-            
+	$queryAtelier->the_post();
+
+	$postName = get_post_field('post_name');
+
+	$heure = substr($postName, -2);
+
+	$heure = ($heure - 6);
+
+	$auteur = get_the_author_meta( "display_name", $post->post_author );
+
+	$colonne = 0;
+
+	switch ($auteur){
+		case "Luna":
+			$colonne = 1;
+		break;
+		case "Eddy":
+			$colonne = 2;
+		break;
+		case "Derick":
+			$colonne = 3;
+		break;
+		case "Maybell":
+			$colonne = 4;
+		break;
+	}
+
+	$gridArea = $heure . "/" . $colonne . "/" . ($heure+2)  . "/" . ($colonne+1);
+
+	echo "<div class = 'unAtelier' style = grid-area:".$gridArea.">";
+
+
+	echo '<p><b>'. get_the_title() .'</b></p>';
+
+	echo '<p>'. get_post_field('post_name') .'</p>';
+
+	echo '<p>'. get_the_author_meta( "display_name", $post->post_author ) .'</p>';
+
+	
+	echo "</div>";
+
 };
+
+echo "</div>";
 
 wp_reset_postdata();
 

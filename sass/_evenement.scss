@@ -2,5 +2,7 @@
 
 .grilleEvenement{
     display: grid;
-    border: 2px solid black;
+    // border: 2px solid black;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(11, 1fr);
 }
