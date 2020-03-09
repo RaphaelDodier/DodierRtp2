@@ -34,7 +34,17 @@ $queryAtelier = new WP_Query($argsAtelier);
 
 $i = 0;
 
-echo "<div class = 'grilleEvenement'>";
+echo "<div class = 'grilleAtelier'>";
+
+echo "<h4>Luna</h4>";
+echo "<h4>Eddy</h4>";
+echo "<h4>Derick</h4>";
+echo "<h4>Maybell</h4>";
+
+echo "<h4>LUNCH</h4>";
+echo "<h4>LUNCH</h4>";
+echo "<h4>LUNCH</h4>";
+echo "<h4>LUNCH</h4>";
 
 // LA BOUCLE
 while ( $queryAtelier->have_posts() ) {

@@ -1,3 +1,20 @@
-.unAtelier{
-    border: 1px solid black;
+.grilleAtelier{
+    display: grid;
+    // border: 2px solid black;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+
+    h4{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .unAtelier{
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
 }
