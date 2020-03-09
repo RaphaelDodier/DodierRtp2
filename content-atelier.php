@@ -25,7 +25,9 @@ get_header();
 /////////////////// QUERY///////////////////////
 $argsAtelier = array(
 	"category_name" => "atelier",
-	"post_per_page"=>10
+	"post_per_page"=>-1,
+	"orderby"=> "post_name",
+	"order"=>"ASC"
 );
 
 $queryAtelier = new WP_Query($argsAtelier);
@@ -36,7 +38,7 @@ $i = 0;
 while ( $queryAtelier->have_posts() ) {
     $queryAtelier->the_post();
     $i = $i+1;
-    echo '<p>'.$i.'. '. get_the_title() .'</p>';
+    echo '<p>'.$i.'. '. get_the_title() .'______<span style="color:red;">'.	get_post_field('post_name').'</span><span style="color:blue;">______'.get_the_author_meta( "display_name", $post->post_author )  .'</span></p>';
             
 };
 
