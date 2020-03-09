@@ -10,6 +10,10 @@
         align-items: center;
     }
 
+    .titre,.lunch{
+        background-color: ($couleurVert);
+    }
+
     .unAtelier{
         border: 1px solid black;
         display: flex;

@@ -87,6 +87,10 @@ nav .menu-menu-1-container #primary-menu li {
           align-items: center;
 }
 
+.grilleAtelier .titre, .grilleAtelier .lunch {
+  background-color: #048000;
+}
+
 .grilleAtelier .unAtelier {
   border: 1px solid black;
   display: -webkit-box;

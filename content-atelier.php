@@ -36,15 +36,16 @@ $i = 0;
 
 echo "<div class = 'grilleAtelier'>";
 
-echo "<h4>Luna</h4>";
-echo "<h4>Eddy</h4>";
-echo "<h4>Derick</h4>";
-echo "<h4>Maybell</h4>";
 
-echo "<h4>LUNCH</h4>";
-echo "<h4>LUNCH</h4>";
-echo "<h4>LUNCH</h4>";
-echo "<h4>LUNCH</h4>";
+echo "<h4 class='titre'>Luna</h4>";
+echo "<h4 class='titre'>Eddy</h4>";
+echo "<h4 class='titre'>Derick</h4>";
+echo "<h4 class='titre'>Maybell</h4>";
+
+echo "<h4 class='lunch'>LUNCH</h4>";
+echo "<h4 class='lunch'>LUNCH</h4>";
+echo "<h4 class='lunch'>LUNCH</h4>";
+echo "<h4 class='lunch'>LUNCH</h4>";
 
 // LA BOUCLE
 while ( $queryAtelier->have_posts() ) {
