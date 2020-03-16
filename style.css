@@ -17,17 +17,26 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  underscores-enfant
 */
-.home {
-  width: 90%;
-  margin: 0 auto;
+.site-info {
+  display: none;
 }
 
 .site-description {
   display: none;
 }
 
+body {
+  background-color: black;
+  color: white;
+}
+
 nav .menu-menu-1-container #primary-menu li {
   margin: 0 20px;
+}
+
+.home {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .conference {

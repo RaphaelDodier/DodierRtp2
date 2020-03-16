@@ -15,12 +15,16 @@
 
 // Page de style pour les elements divers
 
-.home{
-    width: 90%;
-    margin: 0 auto;
+.site-info{
+    display: none;
 }
 
 .site-description{
     display: none;
+}
+
+body{
+    background-color: black;
+    color: white;
 }
 
