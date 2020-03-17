@@ -75,7 +75,7 @@ echo '<h2>'.category_description( get_category_by_slug( 'nouvelle')).'</h2>';
 // The Query
 $args2 = array(
     "category_name" =>"nouvelle",
-    "posts_per_page"=> 4,
+    "posts_per_page"=> 3,
     // "orderby" => "date",
     // "order" => "ASC"
 );
