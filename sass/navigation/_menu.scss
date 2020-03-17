@@ -1,12 +1,39 @@
 nav{
     // position: fixed;
-    // .menu-menu-principale-container{
-    //     #primary-menu{
-    //         display: flex;
-    //         flex-direction: column;
-    //         li{
-    //             margin: 0 20px;
-    //         } 
-    //     }
-    // }
+    .menu-menu-principale-container{
+        // #primary-menu{
+        //     display: flex;
+        //     flex-direction: column;
+        //     li{
+        //         // margin: 0 20px;
+        //     } 
+        // }
+    }
 }
+
+.menu-toggle{
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    z-index: 9999;
+}
+
+.main-navigation ul {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(-150%);
+    transition: transform 0.2s;
+    height: 100%;
+    top: 0;
+    background-color: rgb(39, 39, 39);
+    border-right: white 2px solid;
+
+
+  }
+
+  .main-navigation.toggled ul {
+    display: flex;
+    transform: translateX(0%);
+  }

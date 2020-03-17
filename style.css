@@ -30,6 +30,45 @@ body {
   color: white;
 }
 
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  z-index: 9999;
+}
+
+.main-navigation ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  height: 100%;
+  top: 0;
+  background-color: #272727;
+  border-right: white 2px solid;
+}
+
+.main-navigation.toggled ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
 .home {
   margin: 0 auto;
 }

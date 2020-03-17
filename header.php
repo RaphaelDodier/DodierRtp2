@@ -45,7 +45,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
-			<a class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '&#9776;', 'underscores' ); ?></a>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( '&#9776;', 'underscores' ); ?></button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
