@@ -26,14 +26,31 @@ nav{
     transform: translateX(-150%);
     transition: transform 0.2s;
     height: 100%;
+    width: 100%;
     top: 0;
     background-color: rgb(39, 39, 39);
     border-right: white 2px solid;
 
+    li{
+        padding: 5px 20px;
+        margin: 5px 0;
+        background-color: rgb(209, 209, 209);
+    }
 
   }
 
   .main-navigation.toggled ul {
     display: flex;
     transform: translateX(0%);
+  }
+
+  @media screen and (min-width: 37.5em) {
+    .menu-toggle {
+      display: block;
+      top: 50px;
+    }
+
+    .main-navigation ul {
+        width: 33%;
+    }
   }

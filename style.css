@@ -56,9 +56,16 @@ body {
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
   height: 100%;
+  width: 100%;
   top: 0;
   background-color: #272727;
   border-right: white 2px solid;
+}
+
+.main-navigation ul li {
+  padding: 5px 20px;
+  margin: 5px 0;
+  background-color: #d1d1d1;
 }
 
 .main-navigation.toggled ul {
@@ -69,17 +76,43 @@ body {
           transform: translateX(0%);
 }
 
+@media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: block;
+    top: 50px;
+  }
+  .main-navigation ul {
+    width: 33%;
+  }
+}
+
 .home {
   margin: 0 auto;
 }
 
-.entry-title {
+.entry-header {
   text-align: center;
-  font-size: 5vw;
 }
 
-.attachment-post-thumbnail {
-  width: 100%;
+@media screen and (min-width: 37.5em) {
+  .entry-header {
+    text-align: center;
+    font-size: 5vw;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+  }
+  .entry-header h1 {
+    margin: 0;
+  }
+  .attachment-post-thumbnail {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+  }
 }
 
 .conference {
