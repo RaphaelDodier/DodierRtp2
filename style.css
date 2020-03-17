@@ -21,6 +21,13 @@
   display: none;
 }
 
+.site-title a {
+  color: white;
+  font-weight: bold;
+  font-size: 32px;
+  margin-left: 60px;
+}
+
 .site-description {
   display: none;
 }
@@ -66,6 +73,7 @@ body {
   padding: 5px 20px;
   margin: 5px 0;
   background-color: #d1d1d1;
+  text-align: center;
 }
 
 .main-navigation.toggled ul {
@@ -83,6 +91,9 @@ body {
   }
   .main-navigation ul {
     width: 33%;
+  }
+  .main-navigation ul li {
+    text-align: left;
   }
 }
 
