@@ -1,6 +1,7 @@
 // Page de style pour les evenements
 
 
+
 .evenement{
     display: flex;
     flex-direction: column;
@@ -24,7 +25,23 @@
 
 .grilleEvenement{
     display: grid;
-    // border: 2px solid black;
+    width: 95%;
+    margin: 0 auto;
+    border: 2px dotted white;
     grid-template-columns:  1fr repeat(3, 2fr);
     grid-template-rows: repeat(32, 1fr);
+    p{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3em;
+        // border: 4px solid white;
+    }
+    h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3em;
+        border: 1px solid white;
+    }
 }

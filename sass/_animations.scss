@@ -9,3 +9,12 @@
         filter: blur(0);
     }
 }
+
+@keyframes animTitre{
+    from{
+        transform: translateX(200%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
