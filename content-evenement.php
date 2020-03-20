@@ -25,10 +25,11 @@ get_header();
 
 $args3=array(
     "category_name" =>"evenement",
+    'post_status' => 'future',
     'date_query' => array(
         array(
-            'after' => '2019-09-01',
-            'before' => '2019-11-30',
+            'after' => '2020-04-01',
+            'before' => '2020-06-30',
             'inclusive' => true,
         ),
     ),
@@ -46,9 +47,9 @@ while ( $query3->have_posts() ) {
     $query3->the_post();
     $jour = get_the_date('j');
     $mois = (int)get_the_date('m');
-    $gridArea = $jour . '/' . ($mois%3+1) . '/' . ($jour+1) . '/' . (($mois%3+1)+1);
+    $gridArea = $jour . '/' . (($mois+2)%3+1) . '/' . ($jour+1) . '/' . ((($mois+2)%3+1)+1);
 
-    echo '<h3 style ="border:black 1px solid;grid-area:'. $gridArea.'"><a href='. get_the_permalink() .'>'. get_the_title($query3->post->ID) .'</a> - '. get_the_date('Y-m-d') .' - Grid-area'.$gridArea.'</h3>';
+    echo '<h3 style ="border:white 1px solid;grid-area:'. $gridArea.'"><a href='. get_the_permalink() .'>'. get_the_title($query3->post->ID) .'</a> - '. get_the_date('Y-m-d') .' - Grid-area'.$gridArea.'</h3>';
 
 }
  
