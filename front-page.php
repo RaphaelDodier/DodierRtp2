@@ -55,7 +55,9 @@ while ( $query2->have_posts() ) {
     echo '<div class="uneNouvelles">';
     echo '<h3><a href='. get_the_permalink() .'>'. get_the_title() .'</a></h3>';
     // echo '<h3><a href='. get_the_permalink() .'>'. get_the_title() . '</a> ' . get_the_date('Y-m-d') . '</h3>';
+    echo '<a href='. get_the_permalink() .'>';
     the_post_thumbnail("thumbnail");
+    echo '</a>';
     echo '</div>';
 };
 echo '</div>';
@@ -70,14 +72,15 @@ wp_reset_postdata();
 
 
 /////////////////////////////////////////////// ÉVÈNEMENTS ///////////////////////////////////////////////////
-echo '<h2>'.category_description( get_category_by_slug( 'evenement')).'</h2>';
+echo '<h2 class="titreNouvelle">'.category_description( get_category_by_slug( 'evenement')).'</h2>';
  
 // The Query
 $args = array(
     "category_name" =>"evenement",
-    "posts_per_page"=> 3,
-    // "orderby" => "date",
-    // "order" => "ASC"
+        'post_status' => 'future',
+        'posts_per_page' => 3,
+        'orderby' => 'date',
+        'order' => 'ASC'
 );
 $query1 = new WP_Query( $args );
  
@@ -85,10 +88,13 @@ $query1 = new WP_Query( $args );
 while ( $query1->have_posts() ) {
     $query1->the_post();
     echo '<div class="evenement">';
+    echo '<a href='. get_the_permalink() .'>';
     the_post_thumbnail("thumbnail");
-        echo '<div class="conferenceTexte">';
-            echo '<h3><a href='. get_the_permalink() .'>'. get_the_title() . '</a> ' . get_the_date('Y-m-d') . '</h3>';
-            echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+    echo '</a>';
+        echo '<div class="evenementTexte">';
+            echo '<h3><a href='. get_the_permalink() .'>'. get_the_title() . '</a></h3>';
+            echo '<h5 style="font-weight:bold;">' . get_the_date('Y-m-d') . '<h5>';
+            echo '<p>' . substr(get_the_excerpt(),0,100) . '...<a href='. get_the_permalink() .'> En savoir plus</a></p>';
             echo '</div>';
     echo '</div>';
 };
