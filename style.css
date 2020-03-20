@@ -114,6 +114,17 @@ body {
   }
 }
 
+.titreNouvelle, .titreEvenement {
+  border-top: 2px dotted white;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.titreEvenement {
+  font-weight: bold;
+  font-style: italic;
+}
+
 .home {
   margin: 0 auto;
 }
@@ -128,6 +139,11 @@ body {
   width: 100%;
 }
 
+.gutenbergStyle {
+  -webkit-box-shadow: 8px 8px 8px #b3aeae;
+          box-shadow: 8px 8px 8px #b3aeae;
+}
+
 .conference {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,13 +155,13 @@ body {
   margin-left: 20px;
 }
 
-.titreNouvelle {
+.titreNouvelle, .titreEvenement {
   border-top: 2px dotted white;
   width: 75%;
   margin: 0 auto;
 }
 
-.titreNouvelle p {
+.titreNouvelle p, .titreEvenement p {
   font-size: 32px;
   width: 95%;
   margin: 16px auto;
@@ -171,6 +187,11 @@ body {
 
 .nouvelles .uneNouvelles img {
   border-radius: 10px;
+}
+
+.titreEvenement {
+  font-weight: bold;
+  font-style: italic;
 }
 
 .evenement {

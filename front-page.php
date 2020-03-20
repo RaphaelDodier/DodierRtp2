@@ -72,7 +72,7 @@ wp_reset_postdata();
 
 
 /////////////////////////////////////////////// ÉVÈNEMENTS ///////////////////////////////////////////////////
-echo '<h2 class="titreNouvelle">'.category_description( get_category_by_slug( 'evenement')).'</h2>';
+echo '<h2 class="titreEvenement">'.category_description( get_category_by_slug( 'evenement')).'</h2>';
  
 // The Query
 $args = array(
