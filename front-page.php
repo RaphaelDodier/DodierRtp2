@@ -36,41 +36,8 @@ get_header();
         
         
 
-/////////////////////////////////////////////// CONFÉRENCE ///////////////////////////////////////////////////
-echo '<h2>'.category_description( get_category_by_slug( 'conference')).'</h2>';
- 
-// The Query
-$args = array(
-    "category_name" =>"conference",
-    "posts_per_page"=> 3,
-    // "orderby" => "date",
-    // "order" => "ASC"
-);
-$query1 = new WP_Query( $args );
- 
-// The Loop
-while ( $query1->have_posts() ) {
-    $query1->the_post();
-    echo '<div class="conference">';
-    the_post_thumbnail("thumbnail");
-        echo '<div class="conferenceTexte">';
-            echo '<h3><a href='. get_the_permalink() .'>'. get_the_title() . '</a> ' . get_the_date('Y-m-d') . '</h3>';
-            echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
-            echo '</div>';
-    echo '</div>';
-};
- 
-/* Restore original Post Data 
- * NB: Because we are using new WP_Query we aren't stomping on the 
- * original $wp_query and it does not need to be reset with 
- * wp_reset_query(). We just need to set the post data back up with
- * wp_reset_postdata().
- */
-wp_reset_postdata();
-
-
 /////////////////////////////////////////////// NOUVELLE ///////////////////////////////////////////////////
-echo '<h2>'.category_description( get_category_by_slug( 'nouvelle')).'</h2>';
+echo '<h2 class="titreNouvelle">'.category_description( get_category_by_slug( 'nouvelle')).'</h2>';
  
 // The Query
 $args2 = array(
@@ -100,6 +67,40 @@ echo '</div>';
  * wp_reset_postdata().
  */
 wp_reset_postdata();
+
+
+/////////////////////////////////////////////// ÉVÈNEMENTS ///////////////////////////////////////////////////
+echo '<h2>'.category_description( get_category_by_slug( 'evenement')).'</h2>';
+ 
+// The Query
+$args = array(
+    "category_name" =>"evenement",
+    "posts_per_page"=> 3,
+    // "orderby" => "date",
+    // "order" => "ASC"
+);
+$query1 = new WP_Query( $args );
+ 
+// The Loop
+while ( $query1->have_posts() ) {
+    $query1->the_post();
+    echo '<div class="evenement">';
+    the_post_thumbnail("thumbnail");
+        echo '<div class="conferenceTexte">';
+            echo '<h3><a href='. get_the_permalink() .'>'. get_the_title() . '</a> ' . get_the_date('Y-m-d') . '</h3>';
+            echo '<p>' . substr(get_the_excerpt(),0,200) . '</p>';
+            echo '</div>';
+    echo '</div>';
+};
+ 
+/* Restore original Post Data 
+ * NB: Because we are using new WP_Query we aren't stomping on the 
+ * original $wp_query and it does not need to be reset with 
+ * wp_reset_query(). We just need to set the post data back up with
+ * wp_reset_postdata().
+ */
+wp_reset_postdata();
+
 
  
 ?>

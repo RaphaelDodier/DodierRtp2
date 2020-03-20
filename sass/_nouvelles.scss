@@ -1,10 +1,33 @@
 // Page de style pour les nouvelles
 
-.nouvelles{
-    display: flex;
+.titreNouvelle{
+    border-top: 2px dotted white;
+    width: 75%;
+    margin: 0 auto;
+    p{
+        font-size: 32px;
+        width: 95%;
+        margin: 16px auto;
+        text-align: center;
+    }
+}
 
+.nouvelles{
+    // display: flex;
+    // flex: 1 1 0px;
     .uneNouvelles{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
+        align-items: center;
+        h3{
+            a{
+                color: white;
+                
+            }
+        }
+
+        img{
+            border-radius: 10px;
+        }
     }
 }
