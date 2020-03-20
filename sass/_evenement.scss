@@ -1,5 +1,27 @@
 // Page de style pour les evenements
 
+
+.evenement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    a{
+        img{
+            border-radius: 50%;
+        }
+    }
+    h3{ 
+        text-align: center;
+    }
+    h5{
+        font-weight: bold;
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
 .grilleEvenement{
     display: grid;
     // border: 2px solid black;

@@ -183,6 +183,35 @@ body {
   border-radius: 10px;
 }
 
+.evenement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.evenement a img {
+  border-radius: 50%;
+}
+
+.evenement h3 {
+  text-align: center;
+}
+
+.evenement h5 {
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+}
+
 .grilleEvenement {
   display: -ms-grid;
   display: grid;
