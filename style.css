@@ -4,6 +4,10 @@
 *_NOUVELLES.SCSS
 *_EVENEMENT.SCSS
 */
+* {
+  font-family: 'Baloo Da 2', cursive;
+}
+
 /*
  Theme Name:   Underscores Enfant
  Theme URI:    http://example.com/underscores/
