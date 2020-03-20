@@ -1,0 +1,11 @@
+//Animation du site
+
+
+@keyframes animImage{
+    from{
+        filter: blur(1000px);
+    }
+    to{
+        filter: blur(0);
+    }
+}

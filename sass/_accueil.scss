@@ -7,6 +7,11 @@
     text-align: center;
 }
 
+.attachment-post-thumbnail{
+    animation: 2s animImage;
+    width: 100%;
+}
+
 
 @media screen and (min-width: 37.5em){
 
@@ -33,3 +38,4 @@
 
 
 }
+

@@ -25,6 +25,6 @@
 .grilleEvenement{
     display: grid;
     // border: 2px solid black;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(11, 1fr);
+    grid-template-columns:  1fr repeat(3, 2fr);
+    grid-template-rows: repeat(32, 1fr);
 }

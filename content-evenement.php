@@ -42,14 +42,24 @@ $query3 = new WP_Query( $args3 );
  
 echo "<div class = 'grilleEvenement'>";
 
+for($i=1; $i<=31; $i++){
+    echo '<p style="grid-area:'.($i+1).'/1/'.($i+2).'/2">'.$i.'<p>';
+};
+
+echo '<h2 style="grid-area:1/2/2/3;">Avril</h2>';
+echo '<h2 style="grid-area:1/3/2/4";>Mai</h2>';
+echo '<h2 style="grid-area:1/4/2/5";>Juin</h2>';
+
+
+
 // The 3rd Loop
 while ( $query3->have_posts() ) {
     $query3->the_post();
     $jour = get_the_date('j');
     $mois = (int)get_the_date('m');
-    $gridArea = $jour . '/' . (($mois+2)%3+1) . '/' . ($jour+1) . '/' . ((($mois+2)%3+1)+1);
+    $gridArea = ($jour+1) . '/' . (($mois+2)%3+2) . '/' . ($jour+2) . '/' . ((($mois+2)%3+2)+1);
 
-    echo '<h3 style ="border:white 1px solid;grid-area:'. $gridArea.'"><a href='. get_the_permalink() .'>'. get_the_title($query3->post->ID) .'</a> - '. get_the_date('Y-m-d') .' - Grid-area'.$gridArea.'</h3>';
+    echo '<h3 style ="border:white 1px solid;grid-area:'. $gridArea.'"><a href='. get_the_permalink() .'>'. get_the_title($query3->post->ID) .'</a> - '. get_the_date('Y-m-d') .'</h3>';
 
 }
  

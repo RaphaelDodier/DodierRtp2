@@ -117,6 +117,12 @@ body {
   text-align: center;
 }
 
+.attachment-post-thumbnail {
+  -webkit-animation: 2s animImage;
+          animation: 2s animImage;
+  width: 100%;
+}
+
 .conference {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -194,10 +200,10 @@ body {
 .grilleEvenement {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: (1fr)[11];
-      grid-template-rows: repeat(11, 1fr);
+  -ms-grid-columns: 1fr (2fr)[3];
+      grid-template-columns: 1fr repeat(3, 2fr);
+  -ms-grid-rows: (1fr)[32];
+      grid-template-rows: repeat(32, 1fr);
 }
 
 .grilleAtelier {
@@ -238,5 +244,27 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+}
+
+@-webkit-keyframes animImage {
+  from {
+    -webkit-filter: blur(1000px);
+            filter: blur(1000px);
+  }
+  to {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+}
+
+@keyframes animImage {
+  from {
+    -webkit-filter: blur(1000px);
+            filter: blur(1000px);
+  }
+  to {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
 }
 /*# sourceMappingURL=style.css.map */
